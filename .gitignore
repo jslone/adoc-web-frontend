@@ -4,3 +4,5 @@ node_modules/
 tmp
 .DS_Store
 .idea
+adoc-web-frontend.sublime-project
+adoc-web-frontend.sublime-workspace
