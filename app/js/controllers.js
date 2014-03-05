@@ -2,10 +2,7 @@
 
 /* Controllers */
 
-angular.module('adocApp.controllers', []).
-  controller('MyCtrl1', [function() {
-
-  }])
+angular.module('adocApp.controllers', [])
   .controller('DocCtrl', [function() {
 
   }]);

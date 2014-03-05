@@ -37,3 +37,17 @@
 .navbar-brand {
   font-size: 42px;
 }
+
+.row {
+  margin-right: 0px;
+}
+
+.tree-folder, .tree-folder-header, .tree-folder-name {
+  overflow: visible;
+  display: inline-block;
+}
+
+.tree {
+  overflow-x: scroll !important;
+  border: none !important;
+}
