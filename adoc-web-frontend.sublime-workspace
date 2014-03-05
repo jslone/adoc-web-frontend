@@ -1,0 +1,254 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"create",
+				"createChildren"
+			],
+			[
+				"child",
+				"children"
+			],
+			[
+				"chil",
+				"children"
+			],
+			[
+				"par",
+				"parentDoc"
+			],
+			[
+				"req",
+				"required"
+			],
+			[
+				"fu",
+				"function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print 'Please restart Sublime Text to finish installation'",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/jslone/Documents/adoc-web-backend/api/policies/canWrite.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/api/policies/canRead.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/api/models/Doc.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/api/models/Doc.js",
+		"/Users/jslone/Documents/adoc-web-backend/api/policies/isAuthenticated.js",
+		"/Users/jslone/Documents/adoc-web-backend/api/policies/isAuthenticated.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/config/policies.js",
+		"/Users/jslone/Documents/adoc-web-backend/api/policies/canRead.js",
+		"/Users/jslone/Documents/adoc-web-backend/api/controllers/DocController.js",
+		"/Users/jslone/Documents/adoc-web-backend/api/models/User.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/api/services/passport.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/api/controllers/DocController.coffee",
+		"/Users/jslone/Documents/adoc-web-backend/config/routes.js",
+		"/Users/jslone/Documents/adoc-web-backend/Gruntfile.js",
+		"/Users/jslone/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/jslone/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/jslone/Documents/venpix/api/models/User.coffee",
+		"/Users/jslone/Documents/venpix/api/models/Pic.coffee",
+		"/Users/jslone/Documents/venpix/api/models/Upvote.coffee",
+		"/Users/jslone/Documents/venpix/venpix.sublime-project",
+		"/Users/jslone/Documents/venpix/api/services/passport.js",
+		"/Users/jslone/Documents/venpix/api/controllers/UserController.coffee",
+		"/Users/jslone/Documents/venpix/config/policies.js",
+		"/Users/jslone/Documents/venpix/api/controllers/UserController.js",
+		"/Users/jslone/Documents/venpix/api/policies/isAuthenticated.js",
+		"/Users/jslone/Documents/venpix/config/passport.js",
+		"/Users/jslone/Documents/venpix/config/controllers.js",
+		"/Users/jslone/Documents/venpix/api/models/User.js",
+		"/Users/jslone/Documents/venpix/package.json",
+		"/Users/jslone/Documents/venpix/Gruntfile.js",
+		"/Users/jslone/Library/Application Support/Sublime Text 3/Packages/Default/Default (OSX).sublime-keymap",
+		"/Users/jslone/Documents/venpix/config/routes.js",
+		"/Users/jslone/Documents/venpix/views/user/find.ejs",
+		"/Users/jslone/Downloads/sails-generator-coffee/bin/generate.js",
+		"/Users/jslone/Downloads/sails-generator-coffee/bin/boilerplates/config/controllers.js",
+		"/Users/jslone/Documents/venpix/app/controllers/application_controller.rb",
+		"/Users/jslone/Documents/venpix/config/initializers/devise.rb",
+		"/Users/jslone/Documents/venpix/Gemfile",
+		"/Users/jslone/Documents/venpix/config/routes.rb",
+		"/Users/jslone/Documents/venpix/app/views/users/registrations/new.html.erb",
+		"/Users/jslone/Documents/venpix/app/views/users/new.html.erb",
+		"/Users/jslone/Documents/venpix/app/models/user.rb",
+		"/Users/jslone/Documents/venpix/app/controllers/users_controller.rb"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"}",
+			"tab",
+			"coffe",
+			"block",
+			"coffee",
+			"view",
+			"alt",
+			"split",
+			"screen",
+			"split",
+			"nav",
+			"navigation",
+			"end",
+			"last"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "adoc-web-frontend.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/venpix/venpix.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 263.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
