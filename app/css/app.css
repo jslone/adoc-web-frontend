@@ -28,3 +28,12 @@
   content: "";
   padding: 0;
 }
+
+.navbar {
+  border-radius: 0;
+  margin-bottom: 0;
+}
+
+.navbar-brand {
+  font-size: 42px;
+}
