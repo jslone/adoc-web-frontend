@@ -42,12 +42,21 @@
   margin-right: 0px;
 }
 
+.tree-folder-header {
+  width: 24px;
+}
+
 .tree-folder, .tree-folder-header, .tree-folder-name {
   overflow: visible;
-  display: inline-block;
+  float: left;
+  display: block;
 }
 
 .tree {
   overflow-x: scroll !important;
   border: none !important;
+}
+
+.glyphicon-empty {
+  width: 14px;
 }

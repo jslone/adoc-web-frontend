@@ -3,6 +3,6 @@
 /* Controllers */
 
 angular.module('adocApp.controllers', [])
-  .controller('DocCtrl', [function() {
-
+  .controller('DocTreeRootCtrl', ['$scope','Doc',function($scope,Doc) {
+  	$scope.docs = Doc.root();
   }]);
