@@ -26,17 +26,19 @@ angular.module('adocApp.directives', [])
   				doc.expanded = false;
   			}
   			var template =
-  			'<ul style="list-style-type:none;margin-left:14px;">' +
+  			'<ul class="tree-list">' +
   				'<li data-ng-repeat="doc in docs">' +
-  					'<span class="glyphicon glyphicon-chevron-right" ng-show="doc.children.length && !doc.expanded" ng-click="expand(doc)"></span>' +
-   					'<span class="glyphicon glyphicon-chevron-down" ng-show="doc.children.length && doc.expanded" ng-click="collapse(doc)"></span>' +
-   					'<span class="glyphicon glyphicon-empty" ng-hide="doc.children.length"></span>' +
-   					'<a ng-href="#/doc/{{doc.id}}">{{doc.name}}</a>' +
-   					'<div ng-show="doc.expanded" id="tree.{{doc.id}}"></div>' +
-   				'</li>' +
-   			'</ul>'
+    				'<div class="tree-header">' +
+              '<span class="glyphicon glyphicon-chevron-right" ng-show="doc.children.length && !doc.expanded" ng-click="expand(doc)"></span>' +
+              '<span class="glyphicon glyphicon-chevron-down" ng-show="doc.children.length && doc.expanded" ng-click="collapse(doc)"></span>' +
+    				  '<span class="glyphicon glyphicon-empty" ng-hide="doc.children.length"></span>' +
+  				    '<a class="tree-name" ng-href="#/doc/{{doc.id}}">{{doc.name}}</a>' +
+				    '</div>' +
+            '<div class="sub-tree-wrapper" ng-show="doc.expanded" id="tree.{{doc.id}}"></div>' +
+          '</li>' +
+        '</ul>'
 
-   			element.html('').append($compile(template)(scope));
+        element.html('').append($compile(template)(scope));
   		}
   	};
   }]);

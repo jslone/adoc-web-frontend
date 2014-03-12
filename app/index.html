@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en" ng-app="adocApp">
 <head>
+  <title>adoc</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>adoc</title>
@@ -13,7 +14,6 @@
   <link rel="stylesheet" href="css/app.css"/>
 </head>
 <body>
-  
   <nav class="navbar navbar-inverse" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
@@ -42,7 +42,7 @@
         </form>
       </div>
     </div>
-  </nav>  
+  </nav>
 
   <div class=".container-fluid">
     <div class="row">
@@ -51,7 +51,7 @@
         <div ng-view></div>
       </div>
       <!-- left navigation panel -->
-      <div class="col-sm-3 fuelux col-sm-pull-9">
+      <div class="col-sm-3 col-sm-pull-9 tree-wrapper">
         <!-- navigation tree -->
         <div ng-controller="DocTreeRootCtrl" tree-view></div>
       </div>
