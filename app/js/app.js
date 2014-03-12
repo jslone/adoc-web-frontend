@@ -11,7 +11,8 @@ angular.module('adocApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {templateUrl: 'partials/home.html'});
-  $routeProvider.when('/doc/:id?', {templateUrl: 'partials/doc.html', controller: 'DocCtrl'});
+  $routeProvider.when('/doc', {templateUrl: 'partials/doc-root.html', controller: 'DocListCtrl'});
+  $routeProvider.when('/doc/:id', {templateUrl: 'partials/doc.html', controller: 'DocCtrl'});
   $routeProvider.when('/doc/v/:fullName*\?', {templateUrl: 'partials/doc.html', controller: 'DocCtrl'});
   $routeProvider.otherwise({redirectTo: '/'});
 }]);

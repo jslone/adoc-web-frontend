@@ -18,13 +18,18 @@ angular.module('adocApp.controllers', [])
           $location.path('/doc/v/' + doc.fullName);
         });
       }
-      else if($routeParams.fullName) {
-        $scope.doc = {name: 'testFullName', path: 'test', fullName: 'test/testFullName',children: []};
-      }
       else {
-        $scope.doc = {name: 'root', path: '', fullName: '', children: []};
+        $scope.doc = Doc.lookup({fullName: $routeParams.fullName});
+      }
+      $scope.nonBuiltins = function (doc) {
+        var filtered = Object.create(doc);
+        var filters = ['id','name','path','fullName','children','write','read','createdAt','updatedAt'];
+        for(var i = 0; i < filters.length; i++) {
+          delete filtered[filters[i]];
+        }
+        return filtered;
       }
   }])
-  .controller('DocTreeRootCtrl', ['$scope','Doc',function($scope,Doc) {
+  .controller('DocListCtrl', ['$scope','Doc',function($scope,Doc) {
   	$scope.docs = Doc.root();
   }]);

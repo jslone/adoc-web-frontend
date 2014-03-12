@@ -9,9 +9,17 @@ angular.module('adocApp.services', ['ngResource'])
   .value('version', '0.1')
   .factory('Doc', ['$resource',
   	function($resource) {
+
+      function leafMap(data) {
+        var data = JSON.parse(data);
+        data.map(function (doc) {
+          return doc.isLeaf = doc.children.length == 0;
+        });
+        return data;
+      }
+
   		return $resource('/doc/:docId', {docId: '@id'}, {
   			lookup: {method: 'GET', url: '/doc/v/:fullName'},
-  			root: {method: 'GET', url: '/doc', isArray: true},
-  			children: {method: 'GET', url:'/doc/children/:docId', isArray: true}
+  			root: {method: 'GET', url: '/doc', isArray: true,transformResponse:leafMap}
   		});
   	}]);

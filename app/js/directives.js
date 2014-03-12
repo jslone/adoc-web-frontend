@@ -10,8 +10,11 @@ angular.module('adocApp.directives', [])
   		link: function(scope,element,attrs) {
   			console.log(attrs);
         if(attrs.id) {
-  				var docs = Doc.children({id: attrs.id});
-          scope.docs = docs;
+          scope.doc = Doc.get({id: attrs.id});
+        }
+        else {
+          var doc = {children: scope.docs};
+          scope.doc = doc;
         }
   			scope.expand = scope.expand || function(doc) {
           doc.expanded = true;
@@ -27,11 +30,11 @@ angular.module('adocApp.directives', [])
   			}
   			var template =
   			'<ul class="tree-list">' +
-  				'<li data-ng-repeat="doc in docs">' +
+  				'<li data-ng-repeat="doc in doc.children">' +
     				'<div class="tree-header">' +
-              '<span class="glyphicon glyphicon-chevron-right" ng-show="doc.children.length && !doc.expanded" ng-click="expand(doc)"></span>' +
-              '<span class="glyphicon glyphicon-chevron-down" ng-show="doc.children.length && doc.expanded" ng-click="collapse(doc)"></span>' +
-    				  '<span class="glyphicon glyphicon-empty" ng-hide="doc.children.length"></span>' +
+              '<span class="glyphicon glyphicon-chevron-right" ng-show="!doc.isLeaf && !doc.expanded" ng-click="expand(doc)"></span>' +
+              '<span class="glyphicon glyphicon-chevron-down" ng-show="!doc.isLeaf && doc.expanded" ng-click="collapse(doc)"></span>' +
+    				  '<span class="glyphicon glyphicon-empty" ng-show="doc.isLeaf"></span>' +
   				    '<a class="tree-name" ng-href="#/doc/{{doc.id}}">{{doc.name}}</a>' +
 				    '</div>' +
             '<div class="sub-tree-wrapper" ng-show="doc.expanded" id="tree.{{doc.id}}"></div>' +
