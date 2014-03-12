@@ -1,8 +1,9 @@
 <h1>{{doc.name}}</h1>
 <div ng-repeat="(attr,val) in nonBuiltin(doc)">
-  <h6>{{attr}}</h6>
+  <h4>{{attr}}</h4>
   <p>{{val}}</p>
 </div>
+<h4>Children</h4>
 <div ng-repeat="child in doc.children">
   <a ng-href="#/doc/{{child.id}}">{{child.name}}</a>
 </div>
