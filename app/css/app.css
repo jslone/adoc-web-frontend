@@ -88,3 +88,12 @@
 .error {
   color: red;
 }
+
+.navbar-brand {
+  color:white !important;
+}
+
+.label-user {
+  color: white;
+  margin-right:10px;
+}

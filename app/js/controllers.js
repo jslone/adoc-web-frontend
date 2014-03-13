@@ -33,14 +33,20 @@ angular.module('adocApp.controllers', [])
   	$scope.docs = Doc.root();
   }])
   .controller('UserCtrl',['$scope','$rootScope','User',function($scope,$rootScope,User) {
-    $rootScope.user = User.get();
+    if(!$rootScope.user)
+      $rootScope.user = User.get();
 
     $scope.$on('login',function(event) {
       $scope.login();
     });
 
-    $scope.login = function() {
-      $rootScope.user = User.get();
+    $scope.login = function(user) {
+      if(user) {
+        $rootScope.user = User.auth(user);
+      }
+      else {
+        $rootScope.user = User.get();
+      }
     }
 
     $scope.logout = function() {

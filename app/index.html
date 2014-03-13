@@ -4,7 +4,6 @@
   <title>adoc</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>adoc</title>
   <!-- jquery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
   <!-- bootstrap -->
@@ -12,6 +11,23 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <!-- locals -->
   <link rel="stylesheet" href="css/app.css"/>
+  <!-- icons -->
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="img/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="img/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-TileImage" content="img/mstile-144x144.png">
 </head>
 <body>
   <nav class="navbar navbar-inverse" role="navigation">
@@ -25,7 +41,10 @@
           <span class="icon-bar"></span>
         </button>
         <!-- adoc 'logo' -->
-        <a class="navbar-brand" href="#">adoc</a>
+        <a ng-href="#">
+          <img src='img/favicon-96x96.png' height="48px" width="48px" alt='adoc' style="float:left;">
+          <div class="navbar-brand" ng-href="#">adoc</div>
+        </a>
       </div>
       <!-- put login here as well -->
       <!-- search will need to be implemented -->
@@ -42,7 +61,12 @@
         </form>
         <!-- login form -->
         <div class ="navbar-right" ng-controller="UserCtrl">
-          <p class="navbar-text" ng-show="user.name">Hello, {{user.name}}! <button class="btn btn-default" ng-click="logout();">Logout</button></p>
+          <form class="navbar-form navbar-right">
+            <div class="form-group" ng-show="user.name">
+              <label class="label-user">Hello, {{user.name}}!</label>
+              <button class="btn btn-default" ng-click="logout();">Logout</button>
+            </div>
+          </form>
           <form class="navbar-form navbar-right" role="login" ng-submit="login(auser)" ng-show="!user.name">
             <input type="email" class="form-control" placeholder="email" ng-model="auser.email">
             <input type="password" class="form-control" placeholder="password" ng-model="auser.password">
