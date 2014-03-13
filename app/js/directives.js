@@ -8,7 +8,6 @@ angular.module('adocApp.directives', [])
   	return {
   		restrict: 'AE',
   		link: function(scope,element,attrs) {
-  			console.log(attrs);
         if(attrs.id) {
           scope.doc = Doc.get({id: attrs.id});
         }
@@ -21,7 +20,6 @@ angular.module('adocApp.directives', [])
           if(!doc.loaded) {
             doc.loaded = true;
             var html = $compile('<div tree-view id="' + doc.id + '"></div>')(scope.$new());
-            console.log("#tree." + doc.id);
             var child = $("#tree\\."+doc.id).append(html);
           }
   			}

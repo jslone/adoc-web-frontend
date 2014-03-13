@@ -10,7 +10,6 @@ angular.module('adocApp.controllers', [])
           //change to pretty url without reloading page
           var lastRoute = $route.current;
           $scope.$on('$locationChangeSuccess', function() {
-            console.log($location.path());
             if($location.path() == '/doc/v/' + doc.fullName) {
               $route.current = lastRoute;
             }
@@ -32,4 +31,33 @@ angular.module('adocApp.controllers', [])
   }])
   .controller('DocListCtrl', ['$scope','Doc',function($scope,Doc) {
   	$scope.docs = Doc.root();
+  }])
+  .controller('UserCtrl',['$scope','$rootScope','User',function($scope,$rootScope,User) {
+    $rootScope.user = User.get();
+
+    $scope.$on('login',function(event) {
+      $scope.login();
+    });
+
+    $scope.login = function() {
+      $rootScope.user = User.get();
+    }
+
+    $scope.logout = function() {
+      User.deauth();
+      $rootScope.user = null;
+      $scope.auser = null;
+    }
+
+    $scope.newUser = function(user) {
+      var newUser = new User(user);
+      newUser.$save().then(
+        function(value) {
+          $scope.err = false;
+          $scope.nuser = null;
+          $rootScope.$broadcast('login',value);
+        },
+        function(error) {$scope.err = error}
+      );
+    }
   }]);

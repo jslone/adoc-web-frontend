@@ -40,6 +40,15 @@
             <span class="glyphicon glyphicon-search"></span>
           </button>
         </form>
+        <!-- login form -->
+        <div class ="navbar-right" ng-controller="UserCtrl">
+          <p class="navbar-text" ng-show="user.name">Hello, {{user.name}}! <button class="btn btn-default" ng-click="logout();">Logout</button></p>
+          <form class="navbar-form navbar-right" role="login" ng-submit="login(auser)" ng-show="!user.name">
+            <input type="email" class="form-control" placeholder="email" ng-model="auser.email">
+            <input type="password" class="form-control" placeholder="password" ng-model="auser.password">
+            <button type="submit" class="btn btn-default">Login</button>
+          </form>
+        </div>
       </div>
     </div>
   </nav>

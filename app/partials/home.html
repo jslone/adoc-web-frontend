@@ -1,2 +1,14 @@
-<h1>Welcome to adoc</h1>
-<p>A source documentation tool</p>
+<div class="col-sm-4">
+  <h1>Welcome to adoc</h1>
+  <p>A source documentation tool</p>
+</div>
+<div class="col-sm-4">
+  <form role="user" ng-controller="UserCtrl" ng-submit="newUser(nuser)" style="margin-top:20px;">
+    <input class="form-control" type="text" placeholder="name" ng-model="nuser.name" required>
+    <input class="form-control" type="email" placeholder="email" ng-model="nuser.email" required>
+    <input class="form-control" type="password" placeholder="password" ng-model="nuser.password" required>
+    <button class="btn btn-primary btn-block" type="submit">Create Account</button>
+    <!-- this could definitely used to be cleaned up -->
+    <div class="error" ng-show="err">{{err.data.errors}}</div>
+  </form>
+</div>

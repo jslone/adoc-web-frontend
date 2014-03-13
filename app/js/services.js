@@ -7,8 +7,7 @@
 // In this case it is a simple value service.
 angular.module('adocApp.services', ['ngResource'])
   .value('version', '0.1')
-  .factory('Doc', ['$resource',
-  	function($resource) {
+  .factory('Doc', ['$resource', function($resource) {
 
       function leafMap(data) {
         var data = JSON.parse(data);
@@ -22,4 +21,10 @@ angular.module('adocApp.services', ['ngResource'])
   			lookup: {method: 'GET', url: '/doc/v/:fullName'},
   			root: {method: 'GET', url: '/doc', isArray: true,transformResponse:leafMap}
   		});
-  	}]);
+  }])
+  .factory('User',['$resource', function($resource) {
+    return $resource('/user', null, {
+      auth: {method: 'POST', url: '/user/auth'},
+      deauth: {method: 'POST', url: '/user/deauth'}
+    });
+  }]);
