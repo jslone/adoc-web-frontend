@@ -66,4 +66,35 @@ angular.module('adocApp.controllers', [])
         function(error) {$scope.err = error}
       );
     }
+  }])
+  .controller('UploadCtrl', ['$scope','$location','Doc',function($scope,$location,Doc) {
+    $scope.$watch('file',function(file) {
+      console.log(file);
+      if(file) {
+        var reader = new FileReader();
+        reader.onload = function(event) {
+          try {
+            $scope.err = null;
+            $scope.doc = JSON.parse(event.target.result);
+          }
+          catch(err) {
+            $scope.err = 'Could not parse JSON: ' + err;
+          }
+          $scope.$apply();
+        }
+        reader.readAsText(file);
+      }
+    });
+
+    $scope.upload = function(doc) {
+      var newDoc = new Doc(doc);
+      newDoc.$save()
+        .then(function(doc) {
+          //maybe fix tree nav here, as it won't add if it's already loaded
+          $location.path('/doc/' + doc.id);
+        })
+        .catch(function(err) {
+          $scope.err = err;
+        });
+    }
   }]);

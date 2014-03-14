@@ -12,7 +12,7 @@
   <!-- locals -->
   <link rel="stylesheet" href="css/app.css"/>
   <!-- icons -->
-  <link rel="shortcut icon" href="img/favicon.ico">
+  <link rel="shortcut icon" href="img/favicon.ico?1">
   <link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
   <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
@@ -64,6 +64,7 @@
           <form class="navbar-form navbar-right">
             <div class="form-group" ng-show="user.name">
               <label class="label-user">Hello, {{user.name}}!</label>
+              <a ng-href="#/upload"><button class="btn btn-default">Upload</button></a>
               <button class="btn btn-default" ng-click="logout();">Logout</button>
             </div>
           </form>
@@ -77,7 +78,7 @@
     </div>
   </nav>
 
-  <div class=".container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <!-- main content panel -->
       <div class="col-sm-9 col-sm-push-3">

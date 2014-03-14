@@ -97,3 +97,11 @@
   color: white;
   margin-right:10px;
 }
+
+#upload-drag-drop {
+  border-style:dashed;
+  height:300px;
+  margin-top: 2em;
+  max-width:700px;
+  overflow:scroll;
+}

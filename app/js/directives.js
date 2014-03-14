@@ -42,4 +42,33 @@ angular.module('adocApp.directives', [])
         element.html('').append($compile(template)(scope));
   		}
   	};
+  }])
+  .directive('dragDrop',[function() {
+    return {
+      link: function(scope,element,attrs) {
+        jQuery.event.props.push("dataTransfer");
+
+        function noDefault(event) {
+          if(event.preventDefault)
+            event.preventDefault();
+          //if(event.preventPropogation)
+          //  event.preventPropogation();
+        }
+
+        function dragover(event) {
+          event.dataTransfer.dropEffect = 'copy';
+          noDefault(event);
+        }
+
+        function drop(event) {
+          noDefault(event);
+          scope.file = event.dataTransfer.files[0];
+          scope.$apply();
+        }
+
+        element.bind('drop',drop);
+        element.bind('dragover',dragover);
+        element.bind('dragcenter',dragover);
+      }
+    }
   }]);

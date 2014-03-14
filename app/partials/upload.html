@@ -1,0 +1,8 @@
+<form role="upload" style="margin-left:1em;">
+  <div drag-drop id="upload-drag-drop" class="jumbotron">
+    <h1 ng-hide="doc">Drop doc json here</h1>
+    <div ng-show="doc">{{doc}}</div>
+  </div>
+  <button class="btn btn-primary" ng-disabled="!doc" ng-click="upload(doc)">Upload</button>
+</form>
+<div class="error" ng-show="err">{{err}}</div>
