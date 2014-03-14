@@ -10,6 +10,7 @@ angular.module('adocApp.controllers', [])
           //change to pretty url without reloading page
           var lastRoute = $route.current;
           $scope.$on('$locationChangeSuccess', function() {
+            console.log($location.path());
             if($location.path() == '/doc/v/' + doc.fullName) {
               $route.current = lastRoute;
             }
@@ -67,7 +68,7 @@ angular.module('adocApp.controllers', [])
       );
     }
   }])
-  .controller('UploadCtrl', ['$scope','$location','Doc',function($scope,$location,Doc) {
+  .controller('DocUploadCtrl', ['$scope','$location','Doc',function($scope,$location,Doc) {
     $scope.$watch('file',function(file) {
       console.log(file);
       if(file) {
@@ -96,5 +97,14 @@ angular.module('adocApp.controllers', [])
         .catch(function(err) {
           $scope.err = err;
         });
+    }
+  }])
+  .controller('DocSearchCtrl', ['$scope','$location','Doc', function($scope,$location,Doc) {
+    if($location.search()) {
+      $scope.docs = [];
+      $scope.docs = Doc.search($location.search());
+    }
+    $scope.search = function(query) {
+      $location.url('/search?query=' + query);
     }
   }]);

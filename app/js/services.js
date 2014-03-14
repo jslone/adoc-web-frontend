@@ -19,7 +19,8 @@ angular.module('adocApp.services', ['ngResource'])
 
   		return $resource('/doc/:docId', {docId: '@id'}, {
   			lookup: {method: 'GET', url: '/doc/v/:fullName'},
-  			root: {method: 'GET', url: '/doc', isArray: true,transformResponse:leafMap}
+  			root: {method: 'GET', url: '/doc', isArray: true,transformResponse:leafMap},
+        search: {method: 'GET',url: '/doc/search?query=:query',isArray: true}
   		});
   }])
   .factory('User',['$resource', function($resource) {
